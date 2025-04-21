@@ -10,5 +10,7 @@ namespace Csharp.Models
         public string Jmeno { get; set; }
         [Required]
         public string Heslo { get; set; }
+        [Required]
+        public bool Souhlas { get; set; }
     }
 }

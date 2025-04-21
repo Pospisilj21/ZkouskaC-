@@ -6,5 +6,10 @@
     <input type="text" name="jmeno" placeholder="Jméno..." /><br />
     <input type="password" name="heslo" placeholder="Heslo..." /><br />
     <input type="password" name="hesloKontrola" placeholder="Heslo znovu..." /><br />
+    <label style="display: flex; align-items: center;">
+        @Html.CheckBox("souhlas", new { style = "width:18px;height:18px;accent-color:#007acc;cursor:pointer;" })
+        <span style="margin-left: 10px; font-size: 16px;">Souhlasím s poskytnutím osobních dat za účelem učení AI.</span>
+    </label>
+    <br /><br />
     <input type="submit" value="Registrovat se" />
 </form>

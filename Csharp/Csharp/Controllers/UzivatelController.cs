@@ -3,7 +3,7 @@ using Csharp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Session;
 
-namespace Csharp.Controllers
+namespace maturitaZkouska.Controllers
 {
     public class UzivatelController : Controller
     {
@@ -23,7 +23,7 @@ namespace Csharp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registrovat(string jmeno, string heslo, string hesloKontrola)
+        public IActionResult Registrovat(string jmeno, string heslo, string hesloKontrola, bool souhlas)
         {
             // chybne vyplneni formulare
             if (jmeno == null || jmeno.Trim() == "")
@@ -31,6 +31,8 @@ namespace Csharp.Controllers
             if (heslo == null || heslo.Trim() == "")
                 return RedirectToAction("Registrovat");
             if (hesloKontrola == null || heslo.Trim() != hesloKontrola.Trim())
+                return RedirectToAction("Registrovat");
+            if (!souhlas)
                 return RedirectToAction("Registrovat");
 
             // priprava dat z formulare

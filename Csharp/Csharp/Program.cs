@@ -1,4 +1,7 @@
-namespace Csharp
+using Microsoft.EntityFrameworkCore;
+using Csharp.Data;
+
+namespace _10_ASP_NET_Core
 {
     public class Program
     {
@@ -6,6 +9,8 @@ namespace Csharp
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<MujDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MujConnectionString")));
             var app = builder.Build();
 
             app.UseStaticFiles();

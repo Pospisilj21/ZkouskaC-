@@ -7,8 +7,8 @@ namespace Csharp.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string? Jmeno { get; set; }
+        public string Jmeno { get; set; }
         [Required]
-        public string? Heslo { get; set; }
+        public string Heslo { get; set; }
     }
 }

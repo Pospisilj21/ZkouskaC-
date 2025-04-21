@@ -6,7 +6,7 @@ namespace _10_ASP_NET_Core.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["Titulek"] = "Hlavn� str�nka";
+            ViewData["Titulek"] = "Hlavní stránka";
 
             return View();
         }
